@@ -1,14 +1,19 @@
 
+import lap
 
-def kezdes():
-    print("Egy óriási mezőn vagy. Nyugat felé egy hatalmas épület körvonalai tűnnek fel.")
+def kezdes(targyak):
+    szoveg = "Egy óriási mezőn vagy. Nyugat felé egy hatalmas épület körvonalai tűnnek fel."
+    lapmeret=len(szoveg)+2
+    lap.fooldal(szoveg,lapmeret,targyak,"-","*")
     elsoleiras:str=input(">")
     elsoleiras_kicsi=elsoleiras.lower()
     if elsoleiras_kicsi == "megy epulet" or "megy épület":
-        mezo()
+        mezo(targyak)
     
-def mezo():
-    print("Napfényes mezőn állsz. Nyugatra egy hatalmas kastélyt, délre egy kutat látsz.")
+def mezo(targyak):
+    szoveg = "Napfényes mezőn állsz. Nyugatra egy hatalmas kastélyt, délre egy kutat látsz."
+    lapmeret=len(szoveg)+2
+    lap.fooldal(szoveg,lapmeret,targyak,"-","*")
     masodik_leiras:str=input("> ")
     masodik_leiras_kicsi=masodik_leiras.lower()
     if masodik_leiras_kicsi == "megy kut" or "megy kút":
@@ -18,14 +23,13 @@ def mezo():
     elif masodik_leiras_kicsi == "megy var" or "megy vár":
         kastely()
   
-def kut(targyak): 
+def kut(): 
     print("Napfényes mezőn állsz, egy kút előtt. Itt van: pénz. Nyugatra egy hatalmas kastélyt látsz.")
     felvesz=input("> ")
     felvesz_kicsi=felvesz.lower()
     harmadik_leiras:str=input("> ")
     harmadik_leiras_kicsi=harmadik_leiras.lower()
     if felvesz_kicsi == "felvesz penz" or "felvesz pénz":
-        targyak.append("penz")
         penz_felvetele()
     if harmadik_leiras_kicsi == "megy epulet" or "megy épület":
       kastely() 
