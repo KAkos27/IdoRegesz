@@ -21,7 +21,7 @@ def mezo(targyak):
     masodik_leiras:str=input("> ")
     masodik_leiras_kicsi=masodik_leiras.lower()
     if masodik_leiras_kicsi == "megy kut" or "megy kút":
-      kut() 
+      kut(targyak) 
     elif masodik_leiras_kicsi== "megy epulet" or "megy épület":
       kastely()
     elif masodik_leiras_kicsi == "megy var" or "megy vár":
@@ -45,17 +45,15 @@ def kut(penz, targyak):
 
 def penz_felvetele():
      print("Rendben, a pénzt elraktad")
-     kut(penz)
-     """negyedik_leiras_kicsi:str=negyedik_leiras.lower()
-     if negyedik_leiras_kicsi == "megy epulet" or "megy épület" or "megy kastely" or "megy kastély":
-        kastely()"""
+     kut()
+    
         
-def kastely():
+def kastely(targyak):
     szoveg = "A várudvaron állsz. Nyugatra nyitott kamrát, északra zárt ajtót látsz. Egy széles lépcső vezet fel a vártemplomhoz"
     lapmeret=len(szoveg)+2
     lap.fooldal(szoveg,lapmeret,targyak,"-","*")
     leiras:str=input("> ")
-    eiras_kicsi=otodik_leiras.lower()
+    leiras_kicsi=leiras.lower()
     if leiras_kicsi == "megy vartemplom" or "megy vártemplom":
       print()
     elif leiras_kicsi== "megy kamra":
