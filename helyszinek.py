@@ -1,4 +1,3 @@
-
 import lap
 penz = 0
 def kezdes(targyak):
