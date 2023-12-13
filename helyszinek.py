@@ -55,7 +55,7 @@ def kut(penz,targyak,eletero):
         kastely(itemek,eletero) 
     elif felvesz_kicsi == "megy kastely" or felvesz_kicsi == "megy kastély":
         kastely(itemek,eletero)
-
+    
         
 def kastely(targyak,eletero):
     szoveg = "A várudvaron állsz. Nyugatra nyitott kamrát, északra zárt ajtót látsz. Egy széles lépcső vezet fel a vártemplomhoz"
@@ -81,8 +81,8 @@ def vartemplom(targyak,eletero):
     leiras_kicsi=leiras.lower()
     
     if (leiras_kicsi == "ad penz" or leiras_kicsi == "ad pénz"):
-        while penz == 1:
-            print("Nincs nálad pénz")
-            leiras:str=input("> ")
-            leiras_kicsi=leiras.lower()
-    print("asd")
+        for i in range(0,len(targyak),1):
+            if targyak[i]=="Pénz":
+                print("Van nálad pénz")
+                itemek.append("Kulcs")
+    
