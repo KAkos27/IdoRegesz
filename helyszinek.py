@@ -1,4 +1,4 @@
-import main
+
 
 def kezdes():
     print("Egy óriási mezőn vagy. Nyugat felé egy hatalmas épület körvonalai tűnnek fel.")
@@ -25,7 +25,7 @@ def kut(targyak):
     harmadik_leiras:str=input("> ")
     harmadik_leiras_kicsi=harmadik_leiras.lower()
     if felvesz_kicsi == "felvesz penz" or "felvesz pénz":
-        targyak.append()
+        targyak.append("penz")
         penz_felvetele()
     if harmadik_leiras_kicsi == "megy epulet" or "megy épület":
       kastely() 
