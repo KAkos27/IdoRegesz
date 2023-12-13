@@ -11,7 +11,7 @@ def listasor(jel2,lista,meret):
     for i in range(0,len(lista),1):
         print(f"{jel2}{(lista[i]):^{hossz}}{jel2}")
 
-def fooldal(szoveg,lapmeret,lista,jel,jel2):
+def fooldal(szoveg,lapmeret,lista,jel,jel2,eletero):
     jelsor(jel,lapmeret)
     print()
     szovegsor(jel2,szoveg,lapmeret)
@@ -21,7 +21,7 @@ def fooldal(szoveg,lapmeret,lista,jel,jel2):
     listasor(jel2,lista,lapmeret)
     jelsor(jel,lapmeret)
     print()
-    szovegsor(jel2,"Életerő: 5",lapmeret)
+    szovegsor(jel2,f"Életerő: {eletero} ",lapmeret)
     jelsor(jel,lapmeret)
     print()
 
