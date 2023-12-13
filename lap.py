@@ -21,4 +21,7 @@ def fooldal(szoveg,lapmeret,lista,jel,jel2):
     listasor(jel2,lista,lapmeret)
     jelsor(jel,lapmeret)
     print()
+    szovegsor(jel2,"Életerő: 5",lapmeret)
+    jelsor(jel,lapmeret)
+    print()
 
