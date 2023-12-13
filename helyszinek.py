@@ -1,6 +1,6 @@
 import lap
-itemek = ["kulcs","pénz"]
-penz = 0
+itemek = []
+penz = 1
 
 def elso():
    kezdes(itemek)
@@ -21,13 +21,13 @@ def mezo(targyak):
     masodik_leiras:str=input("> ")
     masodik_leiras_kicsi=masodik_leiras.lower()
     if masodik_leiras_kicsi == "megy kut" or "megy kút":
-      kut(targyak) 
+      kut(penz,itemek) 
     elif masodik_leiras_kicsi== "megy epulet" or "megy épület":
       kastely()
     elif masodik_leiras_kicsi == "megy var" or "megy vár":
         kastely()
   
-def kut(penz, targyak): 
+def kut(penz,targyak): 
     szoveg = "Napfényes mezőn állsz, egy kút előtt. Itt van: pénz. Nyugatra egy hatalmas kastélyt látsz."
     lapmeret=len(szoveg)+2
     lap.fooldal(szoveg,lapmeret,targyak,"-","*")
@@ -36,17 +36,15 @@ def kut(penz, targyak):
     if felvesz_kicsi == "felvesz penz" or "felvesz pénz":
         penz-=1
         if penz == 0:
-            penz_felvetele()
-        print("Már felvetted a pénzt")
-    if felvesz_kicsi == "megy epulet" or "megy épület":
-      kastely() 
+            print("Felvetted a pénzt\nMész tovább a kastélyba")
+            itemek.append("Pénz")
+            kastely(itemek)
+        print("Már felvetted a pénzt\nMész tovább a kastályra")
+    elif felvesz_kicsi == "megy epulet" or "megy épület":
+      kastely(itemek) 
     elif felvesz_kicsi == "megy kastely" or "megy kastély":
-      kastely()
+      kastely(itemek)
 
-def penz_felvetele():
-     print("Rendben, a pénzt elraktad")
-     kut()
-    
         
 def kastely(targyak):
     szoveg = "A várudvaron állsz. Nyugatra nyitott kamrát, északra zárt ajtót látsz. Egy széles lépcső vezet fel a vártemplomhoz"
@@ -55,10 +53,22 @@ def kastely(targyak):
     leiras:str=input("> ")
     leiras_kicsi=leiras.lower()
     if leiras_kicsi == "megy vartemplom" or "megy vártemplom":
-      print()
+      vartemplom(itemek)
     elif leiras_kicsi== "megy kamra":
      print()
     elif leiras_kicsi == "megy ajto" or "megy ajtó":
         print()
     
-      
+def vartemplom(targyak):
+    szoveg = "A templom előtt egy kéregető szerzetes mosolyog rád. Nyugatra nyitott kamrát, északra zárt ajtót látsz."
+    lapmeret=len(szoveg)+2
+    lap.fooldal(szoveg,lapmeret,targyak,"-","*")
+    leiras:str=input("> ")
+    leiras_kicsi=leiras.lower()
+
+    if (leiras_kicsi == "ad penz" or leiras_kicsi == "ad pénz"):
+        while penz == 1:
+            print("Nincs nálad pénz")
+            leiras:str=input("> ")
+            leiras_kicsi=leiras.lower()
+    print("asd")
