@@ -1,5 +1,10 @@
 import lap
+itemek = ["kulcs","pénz"]
 penz = 0
+
+def elso():
+   kezdes(itemek)
+
 def kezdes(targyak):
     szoveg = "Egy óriási mezőn vagy. Nyugat felé egy hatalmas épület körvonalai tűnnek fel."
     lapmeret=len(szoveg)+2
@@ -7,7 +12,7 @@ def kezdes(targyak):
     elsoleiras:str=input(">")
     elsoleiras_kicsi=elsoleiras.lower()
     if elsoleiras_kicsi == "megy epulet" or "megy épület":
-        mezo(targyak)
+        mezo(itemek)
     
 def mezo(targyak):
     szoveg = "Napfényes mezőn állsz. Nyugatra egy hatalmas kastélyt, délre egy kutat látsz."
