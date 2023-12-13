@@ -1,4 +1,3 @@
-
 import lap
 
 def kezdes(targyak):
