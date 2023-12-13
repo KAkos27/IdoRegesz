@@ -1,7 +1,9 @@
-import main
+import lap
 
-def kezdes():
-    print("Egy óriási mezőn vagy. Nyugat felé egy hatalmas épület körvonalai tűnnek fel.")
+def kezdes(targyak):
+    szoveg = "Egy óriási mezőn vagy. Nyugat felé egy hatalmas épület körvonalai tűnnek fel."
+    lapmeret=len(szoveg)+2
+    lap.fooldal(szoveg,lapmeret,targyak,"-","*")
     elsoleiras:str=input(">")
     elsoleiras_kicsi=elsoleiras.lower()
     if elsoleiras_kicsi == "megy epulet" or "megy épület":
@@ -18,7 +20,7 @@ def mezo():
     elif masodik_leiras_kicsi == "megy var" or "megy vár":
         kastely()
   
-def kut(targyak): 
+def kut(): 
     print("Napfényes mezőn állsz, egy kút előtt. Itt van: pénz. Nyugatra egy hatalmas kastélyt látsz.")
     felvesz=input("> ")
     felvesz_kicsi=felvesz.lower()
