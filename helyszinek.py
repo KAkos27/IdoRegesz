@@ -11,7 +11,8 @@ def kezdes(targyak):
     lap.fooldal(szoveg,lapmeret,targyak,"-","*")
     elsoleiras:str=input(">")
     elsoleiras_kicsi=elsoleiras.lower()
-    if elsoleiras_kicsi == "megy epulet" or "megy épület":
+
+    if elsoleiras_kicsi == "megy epulet" or elsoleiras_kicsi =="megy épület":
         mezo(itemek)
     
 def mezo(targyak):
@@ -20,12 +21,15 @@ def mezo(targyak):
     lap.fooldal(szoveg,lapmeret,targyak,"-","*")
     masodik_leiras:str=input("> ")
     masodik_leiras_kicsi=masodik_leiras.lower()
-    if masodik_leiras_kicsi == "megy kut" or "megy kút":
-      kut(penz,itemek) 
-    elif masodik_leiras_kicsi== "megy epulet" or "megy épület":
-      kastely()
-    elif masodik_leiras_kicsi == "megy var" or "megy vár":
-        kastely()
+
+    if masodik_leiras_kicsi == "megy kut" or masodik_leiras_kicsi == "megy kút":
+        kut(penz,itemek) 
+    elif masodik_leiras_kicsi== "megy epulet" or masodik_leiras_kicsi =="megy épület":
+        kastely(itemek)
+    elif masodik_leiras_kicsi == "megy var" or masodik_leiras_kicsi == "megy vár":
+        kastely(itemek)
+    elif masodik_leiras_kicsi == "megy kastely" or masodik_leiras_kicsi == "megy kastély":
+        kastely(itemek)
   
 def kut(penz,targyak): 
     szoveg = "Napfényes mezőn állsz, egy kút előtt. Itt van: pénz. Nyugatra egy hatalmas kastélyt látsz."
@@ -33,17 +37,18 @@ def kut(penz,targyak):
     lap.fooldal(szoveg,lapmeret,targyak,"-","*")
     felvesz=input("> ")
     felvesz_kicsi=felvesz.lower()
-    if felvesz_kicsi == "felvesz penz" or "felvesz pénz":
+
+    if felvesz_kicsi == "felvesz penz" or felvesz_kicsi == "felvesz pénz":
         penz-=1
         if penz == 0:
             print("Felvetted a pénzt\nMész tovább a kastélyba")
             itemek.append("Pénz")
             kastely(itemek)
         print("Már felvetted a pénzt\nMész tovább a kastályra")
-    elif felvesz_kicsi == "megy epulet" or "megy épület":
-      kastely(itemek) 
-    elif felvesz_kicsi == "megy kastely" or "megy kastély":
-      kastely(itemek)
+    elif felvesz_kicsi == "megy epulet" or felvesz_kicsi ==  "megy épület":
+        kastely(itemek) 
+    elif felvesz_kicsi == "megy kastely" or felvesz_kicsi == "megy kastély":
+        kastely(itemek)
 
         
 def kastely(targyak):
@@ -52,11 +57,12 @@ def kastely(targyak):
     lap.fooldal(szoveg,lapmeret,targyak,"-","*")
     leiras:str=input("> ")
     leiras_kicsi=leiras.lower()
-    if leiras_kicsi == "megy vartemplom" or "megy vártemplom":
-      vartemplom(itemek)
+
+    if leiras_kicsi == "megy vartemplom" or leiras_kicsi =="megy vártemplom":
+        vartemplom(itemek)
     elif leiras_kicsi== "megy kamra":
-     print()
-    elif leiras_kicsi == "megy ajto" or "megy ajtó":
+        print()
+    elif leiras_kicsi == "megy ajto" or leiras_kicsi =="megy ajtó":
         print()
     
 def vartemplom(targyak):
